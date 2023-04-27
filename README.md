@@ -14,7 +14,9 @@ Let's see what it means by creating a first bash script `helloworld.sh`.
 #### Shell Scripts
 Open an editor and create a file with the following code
 
+```
 > vim helloworld.sh
+```
 ```
 #!/bin/bash
 
