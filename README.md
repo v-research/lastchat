@@ -12,7 +12,8 @@ says that Bash (Burne-Again SHell) is a *shell*; and a shell is "both a command 
 Let's see what it means by creating a first bash script `helloworld.sh`.
 
 #### Shell Scripts
-Open an editor and create a file with the following code
+A shell script is a text file containing shell commands.
+So, open an editor and create a shell script
 
 ```
 > vim helloworld.sh
@@ -24,5 +25,11 @@ Open an editor and create a file with the following code
 echo "Hello World"
 ```
 
-\# is used for comments but the first line will be 
-Bash scripts often begin with #! /bin/bash (assuming that Bash has been installed in /bin), since this ensures that Bash will be used to interpret the script, even if it is executed under another shell.
+Give to the user the permission to execute the script (instead of just read and write permissions)
+
+
+\# is used for comments but the first line of this script because: (assuming
+that Bash has been installed in /bin), since this ensures that Bash will be
+used to interpret the script, even if it is executed under another shell.
+
+the `echo` 
