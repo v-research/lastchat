@@ -31,8 +31,8 @@ to have a description of the command with all the possible argument (and, someti
 
 ![image](https://user-images.githubusercontent.com/14936492/234990105-3f00b829-86af-47d6-8b7b-673070bbaa43.png)
 
-To execute a Bash script you just type `./<name_of_the_script>` (substituing `<name_of_the_script>` with, e.g., `./helloworld.sh`).
-The file extension is usually `.sh` but you can use any extension (or even none) and the script will be execute nontheless.
+To execute a Bash script you just type `./<name_of_the_script>` (substituting `<name_of_the_script>` with, e.g., `./helloworld.sh`).
+The file extension is usually `.sh` but you can use any extension (or even none) and the script will be execute nonetheless.
 
 \# is used for comments but the first line of this script because: (assuming
 that Bash has been installed in /bin), since this ensures that Bash will be
@@ -43,7 +43,7 @@ which is usually the screen. Later will describe this in more in details.
 
 ### Echo in IT Colors
 What if we want to add some color to our hello world?
-You can tell echo to color its ouput by adding acolor code to the string you echo.
+You can tell echo to color its output by adding color codes to the string you echo.
 Here are some colors:
 ```
 \e[0m #color default
@@ -72,7 +72,7 @@ You don't believe me? You can use Wireshark to inspect what the `nc` does:
 ![image](https://user-images.githubusercontent.com/14936492/234995560-2c621d6b-34ad-40da-bc32-25cbfca86028.png)
 
 But:
-- [BUG#1] we have a problem: **if you try to use multiple netcat clients** to communicate with listene on the TCP port 4444.
+- [BUG#1] we have a problem: **if you try to use multiple netcat clients** to communicate with the listener on the TCP port 4444.
 Try to open another nc client and the messages won't be displayed on the server. You can inspect what is happening with Wireshark.
 2. [BUG#2] We have another problem: when the client is closed (e.g., by pressing `Ctrl+d`) the server shuts down.
 
@@ -97,7 +97,7 @@ messages to the server we can quit (`Ctrl+d`) the client without killing the ser
 
 ## Redirections (LASTchat v0.2)
 What if we now want multiple clients to connect to the chat server?
-Can we somhow tell netcat to send a message and then just close by itself so that I can always run a client and write to the serve?
+Can we somehow tell netcat to send a message and then just close by itself so that I can always run a client and write to the serve?
 The argument (see `man nc`) `-N` does that as it "shutdown the network socket after EOF on the input."
 But how to we specify which message to send through it?
 
@@ -110,7 +110,7 @@ echo "message" | nc -N 127.0.0.1 4444
 The echo prints the message to the STDOUT but, instead of being sent to the screen,
 it is redirect-ed to the STDIN (the standard input) of the command `nc`.
 
-You can read more on redirection in the [referece manual](https://www.gnu.org/software/bash/manual/bash.html#Redirecting-Output)
+You can read more on redirection in the [reference manual](https://www.gnu.org/software/bash/manual/bash.html#Redirecting-Output)
 But you can see the 'pipe' command `|` as taking the output of its left hand side and 
 sending it as input to what it's on his right hand side.
 
@@ -123,7 +123,7 @@ Now you can send messages to your server whenever you want with the command abov
 
 ## Redirections to Files (LASTchat v0.3)
 To make the chat persistent we can save it into a log file.
-As you can redirect an `echo "message"` output into another command (well, process but we are going to discuss processes later on) as input, you can also redirirect it into a file.
+As you can redirect an `echo "message"` output into another command (well, process but we are going to discuss processes later on) as input, you can also redirect it into a file.
 ```
 echo "message" > chat.log
 ```
@@ -141,13 +141,13 @@ do
 done
 ```
 I use `>>`, instead of the single `>` because:
-- `> file` writes a new `file` (or overwrites the whole conent of a file with the same name)
+- `> file` writes a new `file` (or overwrites the whole content of a file with the same name)
 - `>> file` appends at the end of `file`
 
 and we solved [BUG#3]
 
 ## Command Substitution (LASTchat v0.2_logging)
-Chat persistency often requires some timestamps so that one knows when the logged string has been logged or, in our case,
+Chat persistence often requires some timestamps so that one knows when the logged string has been logged or, in our case,
 when the message has been sent. We can add a timestamp to each message by requiring the client to do so when they send a message.
 We can obtain a timestamp with the command `date +FORMAT` where FORMAT can be (see `man date` for more FORMATs) %D-%r for DATE-TIME.
 
@@ -161,12 +161,12 @@ echo "$(date +%D-%r) message" | nc -N 127.0.0.1 4444
 ```
 
 The syntax `$(command)` is called [command substitution](https://www.gnu.org/software/bash/manual/bash.html#Command-Substitution)
-and the `command` within the parenthesis is executed and its output substitues `S(command)`.
+and the `command` within the parenthesis is executed and its output substitutes `S(command)`.
 
 ## Variables (LASTchat v0.3)
 [BUG#4] is critical, clients need to see the chat!
 We can create a script for the client and re-use the idea of the infinite while loop
-so that a client becomes persistent too and I can easily send mulitple messages.
+so that a client becomes persistent too and I can easily send multiple messages.
 Well, we can't really as the following code would constantly send the same message
 over and over.
 ```
