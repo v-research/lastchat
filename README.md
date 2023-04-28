@@ -194,3 +194,15 @@ done
 ```
 ![image](https://user-images.githubusercontent.com/14936492/235008652-b7ecc056-0a3f-47c0-81bc-9cb344de052e.png)
 However, clients still don't talk to other unless they look at the server.
+
+## IF Statement
+TBD
+
+## Special Variables
+TBD
+
+## Arithmetics
+TBD
+
+## Make a Rudimentary GUI with Screen
+#TBD
