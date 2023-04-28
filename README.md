@@ -1,5 +1,5 @@
 # Bash Scripting Course - Implementing LASTchat
-As an n00bies course on Bash scripting we will implement
+As course on Bash scripting for [n00bies](https://www.urbandictionary.com/define.php?term=n00bies) we will implement
 a chat to explore the key concepts of Bash.
 
 I read the [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html) to
