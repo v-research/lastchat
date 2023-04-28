@@ -28,6 +28,7 @@ echo "Hello World"
 Give to the user the permission to execute the script (instead of just read and write permissions)
 with the `chmod` command. [PAUSE] I won't describe all the commands in details but you can also run `man command` (e.g., `man chmod`)
 to have a description of the command with all the possible argument (and, sometimes, examples too).
+
 ![image](https://user-images.githubusercontent.com/14936492/234990105-3f00b829-86af-47d6-8b7b-673070bbaa43.png)
 
 To execute a Bash script you just type `./<name_of_the_script>` (substituing `<name_of_the_script>` with, e.g., `./helloworld.sh`).
@@ -53,6 +54,7 @@ Which you can use by using the command `echo -e` where the `-e` arg: "enable int
 ```
 echo -e "\e[0;32m Hellow \e[0m Colored \e[0;31m World!"
 ```
+
 ![image](https://user-images.githubusercontent.com/14936492/234993194-7300a752-5efa-411a-8a04-5768c8e664b0.png)
 
 ## LASTchat v0.1
@@ -126,6 +128,7 @@ As you can redirect an `echo "message"` output into another command (well, proce
 echo "message" > chat.log
 ```
 And you can test this by using `cat chat.log` to output the content of a file to the STDOUT (see `man cat`).
+
 ![image](https://user-images.githubusercontent.com/14936492/235002992-2bca2c7c-0268-4eb2-b3db-62c1c769d2ec.png)
 
 We can now improve our chat server `chat_server.sh` as
@@ -193,6 +196,7 @@ do
 done
 ```
 ![image](https://user-images.githubusercontent.com/14936492/235008652-b7ecc056-0a3f-47c0-81bc-9cb344de052e.png)
+
 However, clients still don't talk to other unless they look at the server.
 
 ## IF Statement
