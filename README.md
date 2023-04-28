@@ -41,7 +41,7 @@ used to interpret the script, even if it is executed under another shell.
 The `echo` simply prints what we want. Where? On the STDOUT (the standard output)
 which is usually the screen. Later will describe this in more in details.
 
-### Echo in Red
+### Echo in IT Colors
 What if we want to add some color to our hello world?
 You can tell echo to color its ouput by adding acolor code to the string you echo.
 Here are some colors:
