@@ -140,6 +140,7 @@ done
 I use `>>`, instead of the single `>` because:
 - `> file` writes a new `file` (or overwrites the whole conent of a file with the same name)
 - `>> file` appends at the end of `file`
+
 and we solved [BUG#3]
 
 ## Command Substitution (LASTchat v0.2_logging)
@@ -153,8 +154,43 @@ And create a `chat_client.sh`
 ```
 #!/bin/bash
 
-echo "$(date +%D-%r) message" | nc 127.0.0.1 4444
+echo "$(date +%D-%r) message" | nc -N 127.0.0.1 4444
 ```
 
 The syntax `$(command)` is called [command substitution](https://www.gnu.org/software/bash/manual/bash.html#Command-Substitution)
 and the `command` within the parenthesis is executed and its output substitues `S(command)`.
+
+## Variables (LASTchat v0.3)
+[BUG#4] is critical, clients need to see the chat!
+We can create a script for the client and re-use the idea of the infinite while loop
+so that a client becomes persistent too and I can easily send mulitple messages.
+Well, we can't really as the following code would constantly send the same message
+over and over.
+```
+#!/bin/bash
+while [[ true ]]
+do
+  echo "$(date +%D-%r) message" | nc -N 127.0.0.1 4444
+done
+```
+
+But we can ask the person running the client whether they want to send a message or just wait by using `read var`
+that takes a user input and stores into a variable `var`.
+
+![image](https://user-images.githubusercontent.com/14936492/235006748-8475cea0-e711-4dc3-a98b-763bc14b515b.png)
+
+Variables are created by using their name as in `var="ciao"` but their values can be accessed to by using the
+keyword `$` a in `$var`. The `echo` will
+- print the value of a variable `$var` if using the [double quotes](https://www.gnu.org/software/bash/manual/bash.html#Double-Quotes) `echo "$var"`
+- with [single quotes](https://www.gnu.org/software/bash/manual/bash.html#Single-Quotes) it won't expand the `$var` syntax into its value but simply output the string `$var` as it is (try `echo '$var'`)
+
+```
+#!/bin/bash
+while [[ true ]]
+do
+  read message #read input from user
+  echo "$(date +%D-%r) $message" | nc -N 127.0.0.1 4444 #message is now a variable
+done
+```
+![image](https://user-images.githubusercontent.com/14936492/235008652-b7ecc056-0a3f-47c0-81bc-9cb344de052e.png)
+However, clients still don't talk to other unless they look at the server.
