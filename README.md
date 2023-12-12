@@ -79,7 +79,7 @@ Try to open another nc client and the messages won't be displayed on the server.
 
 ### While loops
 You can read about [loops on the reference manual](https://www.gnu.org/software/bash/manual/bash.html#Looping-Constructs)
-but a while loop like the following one. Pls, create a file `chat_server.sh` and type the following code:
+but a while loop like the following one. Now we can create a file `chat_server.sh` and type the following code:
 ```
 #!/bin/bash
 
@@ -203,14 +203,116 @@ done
 ![image](https://user-images.githubusercontent.com/14936492/235008652-b7ecc056-0a3f-47c0-81bc-9cb344de052e.png)
 
 We solved [BUG#6]!
-However, clients still don't talk to other unless they "look" at the server logs. Wait, should we make the server commnicating
+However, clients still don't talk to other unless they "look" at the server logs. Wait, should we make the server communicating
 with the clients (as a sort of proxy) or should we, instead, create a communication directly between the clients?
 
 ## IF Statement
-TBD
+Before continuing with our bug fixing, let us enjoy our odd chat.
+We could add some cool feature like: usernames! 
 
-## Special Variables
-TBD
+We can read the user input, given to the client, and if use the keyword `username` 
+to store a username into a variable. This change in the control flow of the program
+can be implemented using the `IF` statement, changing the client code as follows.
+
+```
+while [[ true ]]
+do
+	echo -n "> "
+	read i
+
+	if [[ $i == "username" ]]
+	then
+		echo -ne "${cred}new username: $cdef"
+		read usr
+	fi
+
+  	read message #read input from user
+	echo "[$(date +%r)] $usr: $mex" | nc -N 127.0.0.1 4444
+done
+```
+The body of the if statement, between the `then` and the `fi` keywords, 
+is executed if the guard between te double brackets is True.
+in this case, if the variable `$i` contains the word "username", then the body
+of the if statement is executed, oterwise it is skipped.
+
+We can improve our client by using some more if statement, creating a few other keywords.
+
+```
+#!/bin/bash
+
+cdef='\e[0m' #color default
+cred='\e[0;31m' #color green
+cgreen='\e[0;32m' #color green
+usr=$(whoami)
+chatlog='chat.log'
+
+echo "WELCOME TO LAST CHAT!"
+
+helpmex="\nCOMMANDS\n\tusername: change username\n\tsend: send message\n\texit: quit chat\n\thelp: print this message\n"
+echo -e $helpmex
+
+while [[ true ]]
+do
+	echo -n "> "
+	read i
+
+	if [[ $i == "help" ]]
+	then
+		echo "[$(date +%r)] $usr: help"
+		echo -e $helpmex
+	fi
+
+	if [[ $i == "username" ]]
+	then
+		oldusr=$usr
+		echo -ne "${cred}new username: $cdef"
+		read usr
+		echo "[$(date +%r)] new username: $oldusr -> $usr" | nc -N 127.0.0.1 4444
+	fi
+
+	if [[ $i == "send" ]]
+	then
+		echo -ne "${cgreen}message: $cdef"
+		read mex
+		echo "[$(date +%r)] $usr: $mex" | nc -N 127.0.0.1 4444
+	fi
+
+	if [[ $i == "exit" ]]
+	then
+		exit
+	fi
+done
+```
+
+Now let's go back to our bug fixing...BUG#3 is our next target.
+
+We can collect all the data sent to the server in a log file.
+This, however, creates a minor challenge.
+
+Let us create, in the server, a variable with the name of the log file, so that 
+we can redirect the output of `nc` to the log file as follows.
+
+```
+#!/bin/bash
+
+clear
+echo "WELCOME TO LAST CHAT!"
+
+chatlog='chat.log'
+
+while [[ true ]]
+do
+	nc -l 4444 | tee -a $chatlog
+	#equivalent to:
+	# nc -l 4444 >> $chatlog
+	# but sends the output of nc both the file and the STDOUT
+
+done
+```
+
+BUG#3 fixed!
+
+BONUS: checkout `man tee`!
 
 ## Arithmetics
 TBD

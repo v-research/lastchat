@@ -6,6 +6,11 @@ cgreen='\e[0;32m' #color green
 usr=$(whoami)
 chatlog='chat.log'
 
+echo "WELCOME TO LAST CHAT!"
+
+helpmex="\nCOMMANDS\n\tusername: change username\n\tsend: send message\n\texit: quit chat\n\thelp: print this message\n"
+echo -e $helpmex
+
 while [[ true ]]
 do
 	echo -n "> "
@@ -13,13 +18,16 @@ do
 
 	if [[ $i == "help" ]]
 	then
-		echo "[$(date +%r)] $usr: -help" | nc -N 127.0.0.1 4444
+		echo "[$(date +%r)] $usr: help"
+		echo -e $helpmex
 	fi
 
 	if [[ $i == "username" ]]
 	then
+		oldusr=$usr
 		echo -ne "${cred}new username: $cdef"
 		read usr
+		echo "[$(date +%r)] new username: $oldusr -> $usr" | nc -N 127.0.0.1 4444
 	fi
 
 	if [[ $i == "send" ]]
