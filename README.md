@@ -75,7 +75,7 @@ You don't believe me? You can use Wireshark to inspect what the `nc` does:
 But:
 - [BUG#1] we have a problem: **if you try to use multiple netcat clients** to communicate with the listener on the TCP port 4444, no message reaches the recipient.
 Try to open another nc client and the messages won't be displayed on the server. You can inspect what is happening with Wireshark.
-2. [BUG#2] We have another problem: when the client is closed (e.g., by pressing `Ctrl+d`) the server shuts down.
+- [BUG#2] We have another problem: when the client is closed (e.g., by pressing `Ctrl+d`) the server shuts down.
 
 ### While loops
 You can read about [loops on the reference manual](https://www.gnu.org/software/bash/manual/bash.html#Looping-Constructs)
