@@ -314,11 +314,19 @@ BUG#3 fixed!
 
 BONUS: checkout `man tee`!
 
-## Arithmetics
-TBD
+## Play Me
+We can now pause. We still have only one open bug.
+I reported the bug as an issue [here](https://github.com/v-research/lastchat/issues).
+Can you help me solving this bug?
 
-## Make a Rudimentary GUI with Screen
-#TBD
+Wait... what if there are other bugs? Let us play a game and improve our chat!
 
-## BUG Tracking
-TBD
+### Rulez
+
+1. accepted pull request with a bug fix: +1
+2. accepted pull request must explicitly fix an approved issue (or more than one)
+3. interesting solution: +1
+4. solution to complex bug: +1
+5. approved issues: +0 :)
+
+Who approves an issue or says a solution is interesting or complex? [marco](https://github.com/rocchettomarco)
