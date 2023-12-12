@@ -325,10 +325,9 @@ Wait... what if there are other bugs? Let us play a game and improve our chat!
 
 ### Rulez
 
-1. accepted pull request with a bug fix: +1
-2. accepted pull request must explicitly fix an approved issue (or more than one)
-3. interesting solution: +1
-4. solution to complex bug: +1
-5. approved issues: +0 :)
+1. accepted pull request with an explicitly accepted bug fix: +1
+2. interesting solution: +1
+3. solution to complex bug: +1
+4. approved issues: +0 :)
 
 Who approves an issue or says a solution is interesting or complex? [marco](https://github.com/rocchettomarco)
