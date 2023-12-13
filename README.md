@@ -325,6 +325,9 @@ But what if there are other bugs? Let us play a game and improve our chat!
 
 ### Rulez
 
+Open an issue and wait for it to be accepted. Once accepted, you will be assigned to that issue.
+We will keep track of the progresses on [this Kanban board](https://github.com/orgs/v-research/projects/4/views/1).
+
 1. accepted pull request with an explicitly accepted bug fix: +1
 2. accepted pull request with an explicitly accepted enhancement: +1
 3. accepted pull request with an explicitly accepted cybersecurity enhancement (see [Infosec Policy](https://edu.v-research.it/zorin_cybersecurity2/#policies-for-information-security)): +1.5
@@ -336,4 +339,5 @@ But what if there are other bugs? Let us play a game and improve our chat!
 9. approved cybersecurity enhancement (label "cyberseucrity enhancement"): +0.1
 10. approved cybersecurity issue (label "cyberseucrity issue"): +0.5
 
-Who approves an issue or says a solution is interesting or complex? [marco](https://github.com/rocchettomarco)
+#### FAQ
+- Who approves an issue or says a solution is interesting or complex? [marco](https://github.com/rocchettomarco)
