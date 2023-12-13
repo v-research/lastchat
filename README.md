@@ -329,8 +329,11 @@ But what if there are other bugs? Let us play a game and improve our chat!
 2. accepted pull request with an explicitly accepted enhancement: +1
 3. accepted pull request with an explicitly accepted cybersecurity enhancement (see [Infosec Policy](https://edu.v-research.it/zorin_cybersecurity2/#policies-for-information-security)): +1.5
 4. interesting solution: +1
-5. solution to complex bug: +1
-6. approved issues: +0.1
-7. approved cybersecurity issues: +0.5
+5. solutions to bug (any size): +1
+6. solution to complex bug (siez L): +1
+7. solution to very complex bug (siez XL): +1.5
+8. approved bug issue (label: "bug"): +0.1
+9. approved cybersecurity enhancement (label "cyberseucrity enhancement"): +0.1
+10. approved cybersecurity issue (label "cyberseucrity issue"): +0.5
 
 Who approves an issue or says a solution is interesting or complex? [marco](https://github.com/rocchettomarco)
