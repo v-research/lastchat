@@ -321,7 +321,7 @@ We can now pause. We still have only one open bug.
 I reported the bug as an issue [here](https://github.com/v-research/lastchat/issues).
 Can you help me solving this bug?
 
-Wait... what if there are other bugs? Let us play a game and improve our chat!
+But what if there are other bugs? Let us play a game and improve our chat!
 
 ### Rulez
 
