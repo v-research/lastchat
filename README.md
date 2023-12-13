@@ -327,7 +327,7 @@ Wait... what if there are other bugs? Let us play a game and improve our chat!
 
 1. accepted pull request with an explicitly accepted bug fix: +1
 2. accepted pull request with an explicitly accepted enhancement: +1
-3. accepted pull request with an explicitly accepted cybersecurity enhancement (see [Information Security Policy](https://edu.v-research.it/zorin_cybersecurity2/#policies-for-information-security): +1.5
+3. accepted pull request with an explicitly accepted cybersecurity enhancement (see [Infosec Policy](https://edu.v-research.it/zorin_cybersecurity2/#policies-for-information-security): +1.5
 4. interesting solution: +1
 5. solution to complex bug: +1
 6. approved issues: +0.1
