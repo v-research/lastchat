@@ -336,7 +336,7 @@ We will keep track of the progresses on [this Kanban board](https://github.com/o
 6. solutions to bug (any size): +1
 7. solution to complex bug (siez L): +1
 8. solution to very complex bug (siez XL): +1.5
-9. approved bug issue (label: "bug"): +0.1
+9. approved bug/enhancement issue (label: "bug"): +0.1
 10. approved cybersecurity enhancement (label "cyberseucrity enhancement"): +0.1
 11. approved cybersecurity issue (label "cyberseucrity issue"): +0.5
 
