@@ -328,16 +328,17 @@ But what if there are other bugs? Let us play a game and improve our chat!
 Open an issue and wait for it to be accepted. Once accepted, you will be assigned to that issue.
 We will keep track of the progresses on [this Kanban board](https://github.com/orgs/v-research/projects/4/views/1).
 
-1. accepted pull request with an explicitly accepted bug fix: +1
-2. accepted pull request with an explicitly accepted enhancement: +1
-3. accepted pull request with an explicitly accepted cybersecurity enhancement (see [Infosec Policy](https://edu.v-research.it/zorin_cybersecurity2/#policies-for-information-security)): +1.5
-4. interesting solution: +1
-5. solutions to bug (any size): +1
-6. solution to complex bug (siez L): +1
-7. solution to very complex bug (siez XL): +1.5
-8. approved bug issue (label: "bug"): +0.1
-9. approved cybersecurity enhancement (label "cyberseucrity enhancement"): +0.1
-10. approved cybersecurity issue (label "cyberseucrity issue"): +0.5
+1. accepted pull request with an (explicitly accepted) bug fix: +1
+2. accepted pull request with an (explicitly accepted) enhancement: +1
+3. accepted pull request with an (explicitly accepted) cybersecurity enhancement (see [Infosec Policy](https://edu.v-research.it/zorin_cybersecurity2/#policies-for-information-security)): +1.5
+4. accepted pull request with an (explicitly accepted) cybersecurity issue (see [Infosec Policy](https://edu.v-research.it/zorin_cybersecurity2/#policies-for-information-security)): +1.5
+5. interesting solution: +1
+6. solutions to bug (any size): +1
+7. solution to complex bug (siez L): +1
+8. solution to very complex bug (siez XL): +1.5
+9. approved bug issue (label: "bug"): +0.1
+10. approved cybersecurity enhancement (label "cyberseucrity enhancement"): +0.1
+11. approved cybersecurity issue (label "cyberseucrity issue"): +0.5
 
 #### FAQ
 - Who approves an issue or says a solution is interesting or complex? [marco](https://github.com/rocchettomarco)
